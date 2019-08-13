@@ -1,10 +1,10 @@
 # HW10-Advanced-Data-Storage-and-Retrieval
 ## 10-Surfs Up!
 
-You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. The following outlines what you need to do.
+I've decided to treat myself to a long holiday vacation in Maui, Hawaii! To help with my trip planning, I needed to do some climate analysis on the area. The following outlines what I did.
 
 
-Step 1 - Climate Analysis and Exploration
+## Step 1 - Climate Analysis and Exploration
 
 To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 
@@ -16,7 +16,7 @@ Use SQLAlchemy automap_base() to reflect your tables into classes and save a ref
 
 
 
-Precipitation Analysis
+### Precipitation Analysis
 
 
 Design a query to retrieve the last 12 months of precipitation data.
@@ -33,7 +33,7 @@ Use Pandas to print the summary statistics for the precipitation data.
 
 
 
-Station Analysis
+### Station Analysis
 
 
 Design a query to calculate the total number of stations.
@@ -61,7 +61,7 @@ Plot the results as a histogram with bins=12.
 
 
 
-Step 2 - Climate App
+## Step 2 - Climate App
 
 Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 
@@ -126,14 +126,14 @@ Use Flask jsonify to convert your API data into a valid JSON response object.
 
 
 
-Optional: Other Recommended Analyses
+## Optional: Other Recommended Analyses
 
 
 The following are optional challenge queries. These are highly recommended to attempt, but not required for the homework.
 
 
 
-Temperature Analysis I
+### Temperature Analysis I
 
 
 Hawaii is reputed to enjoy mild weather all year. Is there a meaningful difference between the temperature in, for example, June and December?
@@ -143,7 +143,7 @@ Use the t-test to determine whether the difference in the means, if any, is stat
 
 
 
-Temperature Analysis II
+### Temperature Analysis II
 
 
 The starter notebook contains a function called calc_temps that will accept a start date and end date in the format %Y-%m-%d and return the minimum, average, and maximum temperatures for that range of dates.
@@ -161,7 +161,7 @@ Use the peak-to-peak (tmax-tmin) value as the y error bar (yerr).
 
 
 
-Daily Rainfall Average
+### Daily Rainfall Average
 
 
 Calculate the rainfall per weather station using the previous year's matching dates.
@@ -172,3 +172,6 @@ Load the list of daily normals into a Pandas DataFrame and set the index equal t
 Use Pandas to plot an area plot (stacked=False) for the daily normals.
 
 
+## Authors
+
+* **Nicolas Gomez Bustamante** - *Initial work* - [PurpleBooth](https://github.com/nbg1)
