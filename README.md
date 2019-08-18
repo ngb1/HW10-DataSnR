@@ -3,67 +3,85 @@
 
 I've decided to treat myself to a long holiday vacation in Maui, Hawaii! To help with my trip planning, I needed to do some climate analysis on the area. The following outlines what I did.
 
+The dates I'm planning to visit the Aloha state are:
+
+FROM: 2020-02-28
+TO:   2020-03-05
+
 
 ## Step 1 - Climate Analysis and Exploration
 
-To begin, use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
+To begin, I used Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 
 
-Use the provided starter notebook and hawaii.sqlite files to complete your climate analysis and data exploration.
-Choose a start date and end date for your trip. Make sure that your vacation range is approximately 3-15 days total.
-Use SQLAlchemy create_engine to connect to your sqlite database.
-Use SQLAlchemy automap_base() to reflect your tables into classes and save a reference to those classes called Station and Measurement.
+I use the provided starter notebook and hawaii.sqlite files to complete  climate analysis and data exploration, considering the dates mentioned above. 
+I also used SQLAlchemy create_engine to connect to your sqlite database, and SQLAlchemy automap_base() to reflect my tables into classes and saved a reference to those classes called Station and Measurement.
 
-
+ALL THE CODES ARE ON THE JUPYTER NOTEBOOK FILE (FINAL)
 
 ### Precipitation Analysis
 
 
-Design a query to retrieve the last 12 months of precipitation data.
-Select only the date and prcp values.
-Load the query results into a Pandas DataFrame and set the index to the date column.
-Sort the DataFrame values by date.
-Plot the results using the DataFrame plot method.
+I designed a query to retrieve the last 12 months of precipitation data, selected only the date and prcp values and loaded the query results into a Pandas DataFrame and set the index to the date column.
+I also sorted the DataFrame values by date,  plotted the results using the DataFrame plot method and used Pandas to print the summary statistics for the precipitation data.
 
+![precipitation.png](precipitation.png)
 
+It can be observed from the plot above that in average precipitation throughout the year is lower than 4in per day, with exception of the following periods:
+- last week of August
+- third week of January
+- second week of April
+- last week of June
 
+In general the probability of precipitation is low, with a mean of 0.2 in of water per day.
 
-
-Use Pandas to print the summary statistics for the precipitation data.
-
-
+Precipitation for the dates are selected are relatively low if compared with last available values.
 
 ### Station Analysis
 
 
-Design a query to calculate the total number of stations.
+I designed a query to calculate the total number of stations (9 in total), from the list below, the most active station is USC00519281 with 2772 observations, whereas the least active is USC00518838 with 511:
 
-Design a query to find the most active stations.
-
-
-List the stations and observation counts in descending order.
-Which station has the highest number of observations?
-Hint: You may need to use functions such as func.min, func.max, func.avg, and func.count in your queries.
-
-
-
-Design a query to retrieve the last 12 months of temperature observation data (tobs).
-
-
-Filter by the station with the highest number of observations.
-Plot the results as a histogram with bins=12.
+[('USC00519281', 2772),
+ ('USC00519397', 2724),
+ ('USC00513117', 2709),
+ ('USC00519523', 2669),
+ ('USC00516128', 2612),
+ ('USC00514830', 2202),
+ ('USC00511918', 1979),
+ ('USC00517948', 1372),
+ ('USC00518838', 511)]
 
 
+I design a query to retrieve the last 12 months of temperature observation data (tobs). I filtered the data by the station with the highest number of observations (USC00519281) and plotted the results as a histogram with bins=12 as shown below.
+
+![histogram.png](histogram.png)
+
+Based on the histogram above, it's very likely (more than 60%) to have tempeatures around 76 degF. 
+
+On the other hand it is unlikely to have temperatures higher than 80 degF and lower than 67 degF (less than 30%)
 
 
+### Temperature Analysis II
 
+
+The starter notebook contains a function called calc_temps that will accept a start date and end date in the format %Y-%m-%d and return the minimum, average, and maximum temperatures for that range of dates.
+I used the calc_temps function to calculate the min, avg, and max temperatures for my trip using the matching dates from the previous available year.
+
+I plotted the min, avg, and max temperature from my previous query as a bar chart.
+
+![tavg_max_min.png](tavg_max_min.png)
+
+I use the average temperature as the bar height, and the peak-to-peak (tmax-tmin) value as the y error bar (yerr).
+
+The expected average temperature during the period I'm planning to visit Hawaii is around 70 degF.
 
 
 
 
 ## Step 2 - Climate App
 
-Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
+After completing the initial analysis, I designed a Flask API based on the queries that I developed.
 
 
 Use FLASK to create your routes.
@@ -126,50 +144,6 @@ Use Flask jsonify to convert your API data into a valid JSON response object.
 
 
 
-## Optional: Other Recommended Analyses
-
-
-The following are optional challenge queries. These are highly recommended to attempt, but not required for the homework.
-
-
-
-### Temperature Analysis I
-
-
-Hawaii is reputed to enjoy mild weather all year. Is there a meaningful difference between the temperature in, for example, June and December?
-You may either use SQLAlchemy or pandas's read_csv() to perform this portion.
-Identify the average temperature in June at all stations across all available years in the dataset. Do the same for December temperature.
-Use the t-test to determine whether the difference in the means, if any, is statistically significant. Will you use a paired t-test, or an unpaired t-test? Why?
-
-
-
-### Temperature Analysis II
-
-
-The starter notebook contains a function called calc_temps that will accept a start date and end date in the format %Y-%m-%d and return the minimum, average, and maximum temperatures for that range of dates.
-Use the calc_temps function to calculate the min, avg, and max temperatures for your trip using the matching dates from the previous year (i.e., use "2017-01-01" if your trip start date was "2018-01-01").
-
-Plot the min, avg, and max temperature from your previous query as a bar chart.
-
-
-Use the average temperature as the bar height.
-Use the peak-to-peak (tmax-tmin) value as the y error bar (yerr).
-
-
-
-
-
-
-
-### Daily Rainfall Average
-
-
-Calculate the rainfall per weather station using the previous year's matching dates.
-Calculate the daily normals. Normals are the averages for the min, avg, and max temperatures.
-You are provided with a function called daily_normals that will calculate the daily normals for a specific date. This date string will be in the format %m-%d. Be sure to use all historic tobs that match that date string.
-Create a list of dates for your trip in the format %m-%d. Use the daily_normals function to calculate the normals for each date string and append the results to a list.
-Load the list of daily normals into a Pandas DataFrame and set the index equal to the date.
-Use Pandas to plot an area plot (stacked=False) for the daily normals.
 
 
 ## Authors
