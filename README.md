@@ -5,8 +5,8 @@ I've decided to treat myself to a long holiday vacation in Maui, Hawaii! To help
 
 The dates I'm planning to visit the Aloha state are:
 
-FROM: 2020-02-28
-TO:   2020-03-05
+- FROM: 2020-02-28
+- TO:   2020-03-05
 
 
 ## Step 1 - Climate Analysis and Exploration
