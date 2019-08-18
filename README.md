@@ -90,10 +90,12 @@ After completing the initial analysis, I designed a Flask API based on the queri
 #### /index
 Home page.
 Listed all routes that are available.
+![directory.png](directory.png)
 
 #### /api/v1.0/precipitation
 Converted the query results to a Dictionary using date as the key and prcp as the value.
 Returned the JSON representation of the dictionary.
+![precipitation_flask.png](precipitation_flask.png)
 
 #### /api/v1.0/stations
 Returned a JSON list of stations from the dataset.
@@ -109,6 +111,7 @@ When given the start only, calculated TMIN, TAVG, and TMAX for all dates greater
 When given the start and the end date, calculated the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
 For this version the start_date and end_date were fixed, I couldn't find an option to associate the route on the website with the variables, but it's doable, it was just not covered in the course (I'll need to invest more time researching on the internet).
 
+![calc_temps.png](calc_temps.png)
 
 ## Authors
 
