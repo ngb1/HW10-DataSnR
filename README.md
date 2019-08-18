@@ -90,20 +90,25 @@ After completing the initial analysis, I designed a Flask API based on the queri
 #### /index
 Home page.
 Listed all routes that are available.
+
 ![directory.png](directory.png)
 
 #### /api/v1.0/precipitation
 Converted the query results to a Dictionary using date as the key and prcp as the value.
 Returned the JSON representation of the dictionary.
+
 ![precipitation_flask.png](precipitation_flask.png)
 
 #### /api/v1.0/stations
 Returned a JSON list of stations from the dataset.
+
 ![stations.png](stations.png)
 
 #### /api/v1.0/tobs
 queried for the dates and temperature observations from a year from the last data point.
 Returned a JSON list of Temperature Observations (tobs) for the previous year.
+
+![tobs.png](tobs.png)
 
 #### /api/v1.0/ start>/ end>
 Returned a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
