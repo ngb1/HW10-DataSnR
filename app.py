@@ -106,6 +106,7 @@ def tobs():
         tobs_dict["date"] = date
         tobs_dict["tobs"] = tobs
         all_tobs.append(tobs_dict)
+    return jsonify(all_tobs)
 
 @app.route("/api/v1.0/start_date/end_date")
 def calc_temps():
