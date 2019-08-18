@@ -102,7 +102,8 @@ Returned a JSON list of stations from the dataset.
 queried for the dates and temperature observations from a year from the last data point.
 Returned a JSON list of Temperature Observations (tobs) for the previous year.
 
-#### /api/v1.0/<start> and /api/v1.0/<start>/<end>
+#### /api/v1.0/ start> and 
+#### /api/v1.0/ start>/ end>
 Returned a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range.
 When given the start only, calculated TMIN, TAVG, and TMAX for all dates greater than and equal to the start date.
 When given the start and the end date, calculated the TMIN, TAVG, and TMAX for dates between the start and end date inclusive.
